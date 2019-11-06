@@ -29,7 +29,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/Sigmob/iOS-SDK", :tag => "#{spec.version}" }
 
 
-  spec.frameworks = 'StoreKit', 'CFNetwork', 'CoreMedia', 'AdSupport', 'CoreMotion', 'MediaPlayer', 'CoreGraphics', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SafariServices', 'MobileCoreService', 'SystemConfiguration'
+  spec.frameworks = 'StoreKit', 'CFNetwork', 'CoreMedia', 'AdSupport', 'CoreMotion', 'MediaPlayer', 'CoreGraphics', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SafariServices', 'MobileCoreServices', 'SystemConfiguration'
   
   spec.weak_framework = 'WebKit', 'UIKit', 'Foundation'
   
