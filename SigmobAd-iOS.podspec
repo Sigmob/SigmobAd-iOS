@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "8.0"
 
 
-  spec.source       = { :git => "https://github.com/Sigmob/iOS-SDK.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/Sigmob/iOS-SDK", :tag => "#{spec.version}" }
 
 
   spec.frameworks = 'StoreKit', 'CFNetwork', 'CoreMedia', 'AdSupport', 'CoreMotion', 'MediaPlayer', 'CoreGraphics', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SafariServices', 'MobileCoreService', 'SystemConfiguration'
