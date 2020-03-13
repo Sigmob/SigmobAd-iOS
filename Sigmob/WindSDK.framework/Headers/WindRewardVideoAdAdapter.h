@@ -23,7 +23,13 @@
 
 - (void)loadAd:(NSString *)placementId;
 
+- (NSString *)sdkVersion;
+
 - (void)presentRewardVideoAdWithViewController:(UIViewController *)controller placementId:(NSString *)placementId error:(NSError * __autoreleasing *)error;
+
+@optional
+
+- (void)presentRewardVideoAdWithViewController:(UIViewController *)controller placementId:(NSString *)placementId options:(NSDictionary *)options error:(NSError * __autoreleasing *)error;
 
 
 @end
