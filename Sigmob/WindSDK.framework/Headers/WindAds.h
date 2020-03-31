@@ -10,7 +10,7 @@
 #import <WindSDK/WindAdOptions.h>
 
 
-extern NSString *WindAdSceneName;
+extern NSString * _Nonnull WindAdSceneName;
 
 typedef NS_ENUM(NSUInteger, WindLogLevel){
     WindLogLevelError=8,
