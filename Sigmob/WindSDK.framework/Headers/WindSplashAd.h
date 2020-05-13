@@ -62,6 +62,12 @@
 
 
 /**
+ *  取消关闭动画 default = NO
+ */
+@property (nonatomic, assign) BOOL cancelClosedAnimate;
+
+
+/**
  *  开屏广告的背景色
  *  可以设置开屏图片来作为开屏加载时的默认图片
  */

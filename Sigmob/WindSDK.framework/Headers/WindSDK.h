@@ -22,6 +22,7 @@
 #import <WindSDK/WindSplashAdAdapter.h>
 #import <WindSDK/WindSplashAdConnector.h>
 #import <WindSDK/WindFullscreenVideoAd.h>
+#import <WindSDK/SIGLog.h>
 
 
 
