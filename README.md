@@ -4,7 +4,7 @@
 
 + [Download SigmobAd-iOS](http://www.sigmob.com/)
 
-+ Check out the [documentation](http://docs.sigmob.cn/#/sdk/ios) for a comprehensive look at all of the APIs available in SigmobAd-iOS
++ Check out the [documentation](http://docs.sigmob.cn/#/sdk/SDK%E6%8E%A5%E5%85%A5/ios/) for a comprehensive look at all of the APIs available in SigmobAd-iOS
 
 
 ## Installation with CocoaPods
