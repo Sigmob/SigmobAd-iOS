@@ -2,7 +2,7 @@
 //  WindFullscreenVideoAd.h
 //  WindSDK
 //
-//  Created by happyelements on 2019/11/25.
+//  Created by happyelements on 2019/11/21.
 //  Copyright © 2019 Codi. All rights reserved.
 //
 
@@ -112,4 +112,5 @@
 - (BOOL)playAd:(UIViewController *)controller withPlacementId:(NSString *)placementId options:(NSDictionary *)options error:( NSError **)error;
 
 @end
+
 
