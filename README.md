@@ -22,7 +22,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 target 'TargetName' do
-pod 'SigmobAd-iOS'
+pod 'SigmobAd-iOS', '2.20.0'
 end
 ```
 Then, run the following command:

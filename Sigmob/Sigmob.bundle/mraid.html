@@ -20,6 +20,7 @@
   var sigmob = window.sigmob = {};
   var adRvSettring = {};
   var materialMeta = {};
+  var ad = {};
   var os = 0;
   var sigmobHandlers = {
     rvSetting: function (val) {
@@ -42,6 +43,14 @@
         }
       }
     },
+    ad: function(val) {
+      var adObj = JSON.parse(val);
+      for (var key in adObj) {
+        if (adObj.hasOwnProperty(key)) {
+          ad[key] = adObj[key];
+        }
+      }
+    },
   };
   sigmob.getOs = function() {
     return os;
@@ -51,6 +60,9 @@
   };
   sigmob.getMaterialMeta = function() {
     return materialMeta;
+  };
+  sigmob.getAd = function() {
+    return ad;
   };
 
   var sendCustomEvent = function () {
