@@ -10,7 +10,8 @@
 #import <WindSDK/WindAdOptions.h>
 
 
-extern NSString * _Nonnull WindAdSceneName;
+
+extern NSString *WindAdSceneName;
 
 typedef NS_ENUM(NSUInteger, WindLogLevel){
     WindLogLevelError=8,
@@ -32,18 +33,21 @@ typedef NS_ENUM (NSInteger, WindAgeRestrictedStatus) {
 };
 
 
-typedef void(^WindAdDebugCallBack)(NSString * _Nullable msg, WindLogLevel level);
+typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
 
 @interface WindAds : NSObject
 
-@property (nonatomic,strong) WindAdOptions * _Nullable adOptions;
+@property (nonatomic,strong) WindAdOptions *adOptions;
 
-+ (instancetype _Nonnull )sharedAds;
++ (instancetype)sharedAds;
 
-+ (NSString * _Nonnull)sdkVersion;
++ (NSString *)sdkVersion;
+
+
+
 
 // Initialize Wind Ads SDK
-+ (void) startWithOptions:(WindAdOptions * _Nullable)options;
++ (void) startWithOptions:(WindAdOptions *)options;
 
 /**
  *   DeBug开关显示
@@ -55,7 +59,7 @@ typedef void(^WindAdDebugCallBack)(NSString * _Nullable msg, WindLogLevel level)
 
 /// 提供新的资源包，需要把sigmob.bundle的文件放入到新的bundle内。
 /// @param name bundle名称（前缀）
-+ (void)setNewBundleName:(NSString * _Nonnull)name;
++ (void)setNewBundleName:(NSString *)name;
 
 
 /**
@@ -63,7 +67,7 @@ typedef void(^WindAdDebugCallBack)(NSString * _Nullable msg, WindLogLevel level)
  *
  *  @param callBack debugBlock，若不设置则在Xcode debug中显示，
  */
-- (void)setDebugCallBack:(WindAdDebugCallBack _Nullable )callBack;
+- (void)setDebugCallBack:(WindAdDebugCallBack)callBack;
 
 
 #pragma mark - GDPR SUPPORT
