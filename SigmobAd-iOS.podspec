@@ -39,7 +39,7 @@ Pod::Spec.new do |spec|
 
   spec.resource = 'Sigmob/Sigmob.bundle'
 
-  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
+  spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
 
   spec.requires_arc = true
 
