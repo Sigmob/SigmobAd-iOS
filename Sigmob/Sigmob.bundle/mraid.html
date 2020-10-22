@@ -16,142 +16,142 @@
   }
 }());
 
-(function() {
-  var sigmob = window.sigmob = {};
-  var adRvSettring = {};
-  var materialMeta = {};
-  var ad = {};
-  var os = 0;
-  var sigmobHandlers = {
-    rvSetting: function (val) {
-      for (var key in val) {
-        if (val.hasOwnProperty(key)) adRvSettring[key] = val[key];
-      }
-    },
-    osType: function (val) {
-      os = val;
-    },
-    video: function (val) {
-      var videoObj = JSON.parse(val);
-      materialMeta.video = videoObj;
-    },
-    material: function(val) {
-      var materialObj = JSON.parse(val);
-      for (var key in materialObj) {
-        if (materialObj.hasOwnProperty(key)) {
-          materialMeta[key] = materialObj[key];
-        }
-      }
-    },
-    ad: function(val) {
-      var adObj = JSON.parse(val);
-      for (var key in adObj) {
-        if (adObj.hasOwnProperty(key)) {
-          ad[key] = adObj[key];
-        }
-      }
-    },
-  };
-  sigmob.getOs = function() {
-    return os;
-  };
-  sigmob.getRvSetting = function() {
-    return adRvSettring;
-  };
-  sigmob.getMaterialMeta = function() {
-    return materialMeta;
-  };
-  sigmob.getAd = function() {
-    return ad;
-  };
+ (function() {
+   var sigmob = window.sigmob = {};
+   var adRvSettring = {};
+   var materialMeta = {};
+   var ad = {};
+   var os = 0;
+   var sigmobHandlers = {
+     rvSetting: function (val) {
+       for (var key in val) {
+         if (val.hasOwnProperty(key)) adRvSettring[key] = val[key];
+       }
+     },
+     osType: function (val) {
+       os = val;
+     },
+     video: function (val) {
+       var videoObj = JSON.parse(val);
+       materialMeta.video = videoObj;
+     },
+     material: function(val) {
+       var materialObj = JSON.parse(val);
+       for (var key in materialObj) {
+         if (materialObj.hasOwnProperty(key)) {
+           materialMeta[key] = materialObj[key];
+         }
+       }
+     },
+     ad: function(val) {
+       var adObj = JSON.parse(val);
+       for (var key in adObj) {
+         if (adObj.hasOwnProperty(key)) {
+           ad[key] = adObj[key];
+         }
+       }
+     },
+   };
+   sigmob.getOs = function() {
+     return os;
+   };
+   sigmob.getRvSetting = function() {
+     return adRvSettring;
+   };
+   sigmob.getMaterialMeta = function() {
+     return materialMeta;
+   };
+   sigmob.getAd = function() {
+     return ad;
+   };
 
-  var sendCustomEvent = function () {
-    var args = new Array();
-    var l = arguments.length;
-    for (var i = 0; i < l; i++) {
-      var obj = arguments[i];
-      if (obj === null) continue;
-      if (Array.isArray(obj)) {
-        args = args.concat(obj);
-      }else {
-        args.push(obj);
-      }
-    }
-    args.unshift('event');
-    args.unshift('smextension');
-    executeNativeCall(args);
-  };
-  var executeNativeCall = function(args) {
-    var command = args.shift();
-    var call = 'sigmob://' + command;
-    var key, value;
-    var isFirstArgument = true;
-    for (var i = 0; i < args.length; i += 2) {
-      key = args[i];
-      value = args[i + 1];
-      if (value === null) continue;
-      if (isFirstArgument) {
-        call += '?';
-        isFirstArgument = false;
-      } else {
-        call += '&';
-      }
-      call += encodeURIComponent(key) + '=' + encodeURIComponent(value);
-    }
-    iframeSendSrc(call);
-  };
+   var sendCustomEvent = function () {
+     var args = new Array();
+     var l = arguments.length;
+     for (var i = 0; i < l; i++) {
+       var obj = arguments[i];
+       if (obj === null) continue;
+       if (Array.isArray(obj)) {
+         args = args.concat(obj);
+       }else {
+         args.push(obj);
+       }
+     }
+     args.unshift('event');
+     args.unshift('smextension');
+     executeNativeCall(args);
+   };
+   var executeNativeCall = function(args) {
+     var command = args.shift();
+     var call = 'sigmob://' + command;
+     var key, value;
+     var isFirstArgument = true;
+     for (var i = 0; i < args.length; i += 2) {
+       key = args[i];
+       value = args[i + 1];
+       if (value === null) continue;
+       if (isFirstArgument) {
+         call += '?';
+         isFirstArgument = false;
+       } else {
+         call += '&';
+       }
+       call += encodeURIComponent(key) + '=' + encodeURIComponent(value);
+     }
+     iframeSendSrc(call);
+   };
 
-  var iframeSendSrc = function(src) {
-    var iframe = document.createElement('iframe');
-    iframe.setAttribute('src', src);
-    document.documentElement.appendChild(iframe);
-    iframe.parentNode.removeChild(iframe);
-    iframe = null;
-  }
+   var iframeSendSrc = function(src) {
+     var iframe = document.createElement('iframe');
+     iframe.setAttribute('src', src);
+     document.documentElement.appendChild(iframe);
+     iframe.parentNode.removeChild(iframe);
+     iframe = null;
+   }
 
-  function callNativeFunc (kwargs, func) {
-    if (kwargs === undefined) return undefined;
-    if(func === undefined) return undefined;
-    if (os === 1) {
-      kwargs['func'] = func;
-      var returnStr = prompt(JSON.stringify(kwargs));
-      return JSON.parse(returnStr);
-    }else {
-      kwargs['func'] = func;
-      var returnStr = sigandroid.func(JSON.stringify(kwargs));
-      return JSON.parse(returnStr);
-    }
-  };
-  sigmob.getAppInfo = function(kwargs) {
-    return callNativeFunc(kwargs, 'getAppInfo:');
-  };
-  sigmob.addDcLog = function(kwargs) {
-    return callNativeFunc(kwargs, 'javascriptAddDcLog:');
-  };
-  sigmob.addMacro = function(key, value) {
-    var kwargs = {};
-    kwargs['key'] = key;
-    kwargs['value'] = value;
-    return callNativeFunc(kwargs, 'addMacro:');
-  };
-  sigmob.executeVideoAdTracking = function(event) {
-    var kwargs = {};
-    kwargs['event'] = event;
-    return callNativeFunc(kwargs, 'excuteRewardAdTrack:');
-  };
-  sigmob.updateAppStoreRect = function(x, y) {
-      var args = ['x', x, 'y', y];
-      sendCustomEvent('AppStore', args);
-  };
-  sigmob.fireChangeEvent = function(properties) {
-    for (var p in properties) {
-      if (properties.hasOwnProperty(p)) {
-        var handler = sigmobHandlers[p];
-        handler(properties[p]);
-      }
-    }
-  };
-}());
+   function callNativeFunc (kwargs, func) {
+     if (kwargs === undefined) return undefined;
+     if(func === undefined) return undefined;
+     if (os === 1) {
+       kwargs['func'] = func;
+       var returnStr = prompt(JSON.stringify(kwargs));
+       return JSON.parse(returnStr);
+     }else {
+       kwargs['func'] = func;
+       var returnStr = sigandroid.func(JSON.stringify(kwargs));
+       return JSON.parse(returnStr);
+     }
+   };
+   sigmob.getAppInfo = function(kwargs) {
+     return callNativeFunc(kwargs, 'getAppInfo:');
+   };
+   sigmob.addDcLog = function(kwargs) {
+     return callNativeFunc(kwargs, 'javascriptAddDcLog:');
+   };
+   sigmob.addMacro = function(key, value) {
+     var kwargs = {};
+     kwargs['key'] = key;
+     kwargs['value'] = value;
+     return callNativeFunc(kwargs, 'addMacro:');
+   };
+   sigmob.executeVideoAdTracking = function(event) {
+     var kwargs = {};
+     kwargs['event'] = event;
+     return callNativeFunc(kwargs, 'excuteRewardAdTrack:');
+   };
+   sigmob.updateAppStoreRect = function(x, y) {
+       var args = ['x', x, 'y', y];
+       sendCustomEvent('AppStore', args);
+   };
+   sigmob.fireChangeEvent = function(properties) {
+     for (var p in properties) {
+       if (properties.hasOwnProperty(p)) {
+         var handler = sigmobHandlers[p];
+         handler(properties[p]);
+       }
+     }
+   };
+ }());
 
 (function() {
   var mraid = window.mraid = {};
@@ -746,8 +746,20 @@
   mraid.endcardShow = function() {
     sendCustomEvent(MRAID_CUSTOM_EVENTS.AD_ENDCARD_SHOW);
   };
-  mraid.companionClick = function(ctime,x,y) {
-    sendCustomEvent(MRAID_CUSTOM_EVENTS.AD_COMPANION_CLICK, 'ctime', ctime, 'x', x, 'y', y);
+  mraid.companionClick = function(ctime) {
+    var args = new Array();
+    var l = arguments.length;
+    for (var i = 0; i < l; i++) {
+      var obj = arguments[i];
+      args.push(obj)
+    }
+    args.shift();
+    var ln = args.length;
+    if (ln == 0) sendCustomEvent(MRAID_CUSTOM_EVENTS.AD_COMPANION_CLICK, 'ctime', ctime);
+    else {
+      var ext = args[ln-1];
+      sendCustomEvent(MRAID_CUSTOM_EVENTS.AD_COMPANION_CLICK, 'ctime', ctime, 'ext', JSON.stringify(ext));
+    }
   };
   mraid.dissShade = function(ctime) {
     sendCustomEvent(MRAID_CUSTOM_EVENTS.AD_DISS_SHADE, 'ctime', ctime);
@@ -861,10 +873,10 @@
     args.shift();
     if (!URL) broadcastEvent(EVENTS.ERROR, 'URL is required.', 'open');
     else {
-      var x = args.shift();
-      var y = args.shift();
-      if (x === undefined && y === undefined) bridge.executeNativeCall(['open', 'url', URL]);
-      else bridge.executeNativeCall(['open', 'url', URL, 'x', x, 'y', y]);
+      var ln = args.length;
+      if (ln == 0)  bridge.executeNativeCall(['open', 'url', URL]);
+      var ext = args[ln-1];
+      bridge.executeNativeCall(['open', 'url', URL, 'ext', JSON.stringify(ext)]);
     }
   };
 

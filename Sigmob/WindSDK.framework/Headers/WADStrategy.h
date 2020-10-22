@@ -17,10 +17,12 @@ static NSString *const WindAdsSDKChannelSigmob = @"sigmob";
 @property (nonatomic,copy) NSString *appId;
 @property (nonatomic,copy) NSString *apiKey;
 @property (nonatomic,copy) NSString *placementId;
+@property (nonatomic,copy) NSString *unitId;
 @property (nonatomic,copy) NSString *repApiKey;
 @property (nonatomic,copy) NSString *repApiSecret;
 @property (nonatomic,copy) NSString *templateType;
 @property (nonatomic,copy) NSString *publisherId;
+
 @end
 
 
