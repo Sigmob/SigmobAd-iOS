@@ -52,12 +52,12 @@ Pod::Spec.new do |spec|
   #    ss.dependency 'AppLovinSDK', '6.14.2'
   # end
 
-  # spec.subspec 'SigmobFacebookAdapter' do |ss|
-  #    ss.ios.deployment_target = '9.0'
-  #    ss.vendored_libraries = 'WindSDK/Applovin/*.a'
-  #    ss.dependency 'SigmobAd-iOS/WindSDK'
-  #    ss.dependency 'FBAudienceNetwork', '6.0.0'
-  # end
+  spec.subspec 'SigmobFacebookAdapter' do |ss|
+     ss.ios.deployment_target = '9.0'
+     ss.vendored_libraries = 'WindSDK/Facebook/*.a'
+     ss.dependency 'SigmobAd-iOS/WindSDK'
+     ss.dependency 'FBAudienceNetwork', '6.0.0'
+  end
 
   # spec.subspec 'SigmobGDTAdapter' do |ss|
   #   ss.ios.deployment_target = '9.0'
@@ -100,12 +100,12 @@ Pod::Spec.new do |spec|
   # end
 
 
-  spec.subspec 'SigmobUnityAdsAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/UnityAds/*.a'
-    ss.vendored_frameworks = 'WindSDK/UnityAds/*.framework'
-    ss.dependency 'SigmobAd-iOS/WindSDK'
-  end
+  # spec.subspec 'SigmobUnityAdsAdapter' do |ss|
+  #   ss.ios.deployment_target = '9.0'
+  #   ss.vendored_libraries = 'WindSDK/UnityAds/*.a'
+  #   ss.vendored_frameworks = 'WindSDK/UnityAds/UnityAds.framework'
+  #   ss.dependency 'SigmobAd-iOS/WindSDK'
+  # end
 
   
 
