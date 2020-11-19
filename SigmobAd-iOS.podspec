@@ -41,7 +41,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'SigmobTouTiaoAdapter' do |ss|
      ss.ios.deployment_target = '9.0'
-     ss.vendored_frameworks = 'WindSDK/Admob/*.a'
+     ss.vendored_frameworks = 'WindSDK/Toutiao/*.a'
      ss.dependency 'Bytedance-UnionAD', '3.2.5.2'
      ss.dependency 'SigmobAd-iOS/WindSDK'
   end
