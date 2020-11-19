@@ -59,13 +59,30 @@ Pod::Spec.new do |spec|
   #    ss.dependency 'FBAudienceNetwork', '6.0.0'
   # end
 
-  spec.subspec 'SigmobGDTAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/GDT/*.a','WindSDK/GDT/ThirdParty/*.{a}'
-    ss.dependency 'SigmobAd-iOS/WindSDK'
-  end
+  # spec.subspec 'SigmobGDTAdapter' do |ss|
+  #   ss.ios.deployment_target = '9.0'
+  #   ss.vendored_libraries = 'WindSDK/GDT/*.a','WindSDK/GDT/ThirdParty/*.{a}'
+  #   ss.source_files = 'WindSDK/GDT/ThirdParty/*.{h}'
+  #   ss.dependency 'SigmobAd-iOS/WindSDK'
+  #   ss.libraries  = 'xml2'
+  # end
+
+
+  # spec.subspec 'SigmobIronSourceAdapter' do |ss|
+  #   ss.ios.deployment_target = '9.0'
+  #   ss.vendored_libraries = 'WindSDK/Ironsource/*.a'
+  #   ss.dependency 'SigmobAd-iOS/WindSDK'
+  #   ss.dependency 'IronSourceSDK', '7.0.1.0'
+  # end
   
 
+  # spec.subspec 'SigmobMintegralAdapter' do |ss|
+  #   ss.ios.deployment_target = '9.0'
+  #   ss.vendored_libraries = 'WindSDK/Mintegral/*.a'
+  #   ss.dependency 'SigmobAd-iOS/WindSDK'
+  #   ss.dependency 'MintegralAdSDK/RewardVideoAd', '6.6.0'
+  #   ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '6.6.0'
+  # end
 
   # spec.subspec 'SigmobTouTiaoAdapter' do |ss|
   #    ss.ios.deployment_target = '9.0'
@@ -74,6 +91,21 @@ Pod::Spec.new do |spec|
   #    ss.dependency 'SigmobAd-iOS/WindSDK'
   # end
 
+
+  # spec.subspec 'SigmobVungleAdapter' do |ss|
+  #   ss.ios.deployment_target = '9.0'
+  #   ss.vendored_libraries = 'WindSDK/Vungle/*.a'
+  #   ss.dependency 'SigmobAd-iOS/WindSDK'
+  #   ss.dependency 'VungleSDK-iOS', '6.8.0'
+  # end
+
+
+  spec.subspec 'SigmobUnityAdsAdapter' do |ss|
+    ss.ios.deployment_target = '9.0'
+    ss.vendored_libraries = 'WindSDK/UnityAds/*.a'
+    ss.vendored_frameworks = 'WindSDK/UnityAds/*.framework'
+    ss.dependency 'SigmobAd-iOS/WindSDK'
+  end
 
   
 
