@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "2.22.0"
+  spec.version      = "0.1.0"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   
   spec.description      = <<-DESC
@@ -17,30 +17,34 @@ Pod::Spec.new do |spec|
                        DESC
 
   spec.homepage     = "http://www.sigmob.com/"
-  #
-
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
-
   spec.author       = { "Codi" => "codi.zhao@sigmob.com" }
-  
-  spec.platform     = :ios, "8.0"
-
-
+  spec.platform     = :ios, "9.0"
+  spec.ios.deployment_target = '9.0'
+  spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
   spec.source       = { :git => "https://github.com/Sigmob/iOS-SDK.git", :tag => "#{spec.version}" }
-
-
-  spec.frameworks = 'ImageIO','StoreKit', 'CFNetwork', 'CoreMedia', 'AdSupport', 'CoreMotion', 'MediaPlayer', 'CoreGraphics', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SafariServices', 'MobileCoreServices', 'SystemConfiguration'
   
-  spec.weak_framework = 'WebKit', 'UIKit', 'Foundation'
-  
-  spec.libraries = 'c++', 'z', 'sqlite3'
-
-  spec.vendored_frameworks =  'Sigmob/WindSDK.framework'
-
-  spec.resource = 'Sigmob/Sigmob.bundle'
-
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
-
   spec.requires_arc = true
+  spec.default_subspec = 'WindSDK'
+
+  # 默认的核心模块
+  spec.subspec 'WindSDK' do |ss|
+    ss.frameworks = 'ImageIO','StoreKit', 'CFNetwork', 'CoreMedia', 'AdSupport', 'CoreMotion', 'MediaPlayer', 'CoreGraphics', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SafariServices', 'MobileCoreServices', 'SystemConfiguration'
+    ss.weak_framework = 'WebKit', 'UIKit', 'Foundation'
+    ss.libraries = 'c++', 'z', 'sqlite3'
+    ss.vendored_frameworks =  'WindSDK/WindSDK.framework'
+    ss.resource = 'WindSDK/Sigmob.bundle'
+  end
+  
+
+
+  spec.subspec 'SigmobTouTiaoAdapter' do |ss|
+     ss.ios.deployment_target = '9.0'
+     ss.vendored_frameworks = 'WindSDK/Admob/*.a'
+     ss.dependency 'Bytedance-UnionAD', '3.2.5.2'
+     ss.dependency 'SigmobAd-iOS/WindSDK'
+  end
+
 
 end
