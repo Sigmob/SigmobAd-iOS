@@ -60,10 +60,10 @@ Pod::Spec.new do |spec|
   # end
 
   spec.subspec 'SigmobGDTAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/GDT/*.a'
+    ss.ios.deployment_target = '9.0'source_files
+    ss.vendored_libraries = 'WindSDK/GDT/*.a','WindSDK/GDT/lib/*.{a}'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.public_header_files = "WindSDK/GDT/lib/*.h"
+    ss.source_files = "WindSDK/GDT/lib/*.h"
 
   end
   
