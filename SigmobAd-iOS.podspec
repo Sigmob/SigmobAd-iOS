@@ -19,8 +19,8 @@ Pod::Spec.new do |spec|
   spec.homepage     = "http://www.sigmob.com/"
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.author       = { "Codi" => "codi.zhao@sigmob.com" }
-  spec.platform     = :ios, "9.0"
-  spec.ios.deployment_target = '9.0'
+  spec.platform     = :ios, "8.0"
+  spec.ios.deployment_target = '8.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
   spec.source       = { :git => "https://github.com/Sigmob/iOS-SDK.git", :tag => "#{spec.version}" }
   
@@ -36,15 +36,48 @@ Pod::Spec.new do |spec|
     ss.vendored_frameworks =  'WindSDK/WindSDK.framework'
     ss.resource = 'WindSDK/Sigmob.bundle'
   end
+
+
+  # spec.subspec 'SigmobAdmobAdapter' do |ss|
+  #    ss.ios.deployment_target = '9.0'
+  #    ss.vendored_libraries = 'WindSDK/Admob/*.a'
+  #    ss.dependency 'SigmobAd-iOS/WindSDK'
+  #    ss.dependency 'Google-Mobile-Ads-SDK', '7.65.0'
+  # end
+
+  # spec.subspec 'SigmobAppLovinAdapter' do |ss|
+  #    ss.ios.deployment_target = '9.0'
+  #    ss.vendored_libraries = 'WindSDK/Applovin/*.a'
+  #    ss.dependency 'SigmobAd-iOS/WindSDK'
+  #    ss.dependency 'AppLovinSDK', '6.14.2'
+  # end
+
+  # spec.subspec 'SigmobFacebookAdapter' do |ss|
+  #    ss.ios.deployment_target = '9.0'
+  #    ss.vendored_libraries = 'WindSDK/Applovin/*.a'
+  #    ss.dependency 'SigmobAd-iOS/WindSDK'
+  #    ss.dependency 'FBAudienceNetwork', '6.0.0'
+  # end
+
+  spec.subspec 'SigmobGDTAdapter' do |ss|
+    ss.ios.deployment_target = '9.0'
+    ss.vendored_libraries = 'WindSDK/GDT/*.a'
+    ss.dependency 'SigmobAd-iOS/WindSDK'
+    ss.public_header_files = "WindSDK/GDT/lib/*.h"
+
+  end
   
 
 
-  spec.subspec 'SigmobTouTiaoAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
-     ss.vendored_frameworks = 'WindSDK/Toutiao/*.a'
-     ss.dependency 'Bytedance-UnionAD', '3.2.5.2'
-     ss.dependency 'SigmobAd-iOS/WindSDK'
-  end
+  # spec.subspec 'SigmobTouTiaoAdapter' do |ss|
+  #    ss.ios.deployment_target = '9.0'
+  #    ss.vendored_libraries = 'WindSDK/Toutiao/*.a'
+  #    ss.dependency 'Bytedance-UnionAD', '3.2.5.2'
+  #    ss.dependency 'SigmobAd-iOS/WindSDK'
+  # end
+
+
+  
 
 
 end
