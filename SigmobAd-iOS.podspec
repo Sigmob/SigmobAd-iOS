@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "0.1.0"
+  spec.version      = "2.23.0"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   
   spec.description      = <<-DESC
@@ -103,8 +103,23 @@ Pod::Spec.new do |spec|
   spec.subspec 'SigmobUnityAdsAdapter' do |ss|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/UnityAds/*.a'
-    ss.vendored_frameworks = 'WindSDK/UnityAds/UnityAds.framework'
+    ss.dependency 'UnityAds', '3.4.8'
     ss.dependency 'SigmobAd-iOS/WindSDK'
   end
+
+  spec.subspec 'SigmobTapjoyAdapter' do |ss|
+    ss.ios.deployment_target = '9.0'
+    ss.vendored_libraries = 'WindSDK/Tapjoy/*.a'
+    ss.dependency 'TapjoySDK', '12.7.0'
+    ss.dependency 'SigmobAd-iOS/WindSDK'
+  end
+
+  spec.subspec 'SigmobKSAdapter' do |ss|
+    ss.ios.deployment_target = '9.0'
+    ss.vendored_libraries = 'WindSDK/SigmobKS/*.a'
+    ss.dependency 'KSAdSDK', '3.3.3'
+    ss.dependency 'SigmobAd-iOS/WindSDK'
+  end
+
 
 end
