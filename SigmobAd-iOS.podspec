@@ -63,8 +63,7 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/GDT/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'GDTMobSDK.', '4.11.9'
-  
+    ss.dependency 'GDTMobSDK', '4.11.9'
   end
 
 
@@ -117,7 +116,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'SigmobKSAdapter' do |ss|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/SigmobKS/*.a'
-    ss.dependency 'KSAdSDK', '3.3.3'
+    ss.dependency 'KSAdSDK', '3.3.5'
     ss.dependency 'SigmobAd-iOS/WindSDK'
   end
 
