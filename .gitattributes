@@ -1,0 +1,1 @@
+WindSDK/GDT/Classes/*.a filter=lfs diff=lfs merge=lfs -text
