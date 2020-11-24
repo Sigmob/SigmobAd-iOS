@@ -33,17 +33,17 @@
 
 - (void)setup:(NSDictionary *)options;
 
-
-@optional
-
-- (BOOL)isReadyWithStrategy:(WADStrategy *)strategy;
+- (NSUInteger)adapterVersion;
 
 - (NSString *)sdkVersion;
+
+- (BOOL)isReadyWithStrategy:(WADStrategy *)strategy;
 
 - (void)presentAdWithViewController:(UIViewController *)controller
                            strategy:(WADStrategy *)strategy
                         placementId:(NSString *)placementId
                             options:(NSDictionary *)options;
+
 
 @end
 

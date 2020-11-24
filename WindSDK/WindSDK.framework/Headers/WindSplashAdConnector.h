@@ -17,45 +17,63 @@
 
 @optional
 
+
 /**
+ *
  *  开屏广告初始化成功
  */
 - (void)adapterDidSetUpSplashAd:(id<WindSplashAdAdapter>)splashAdAdapter;
+
+
 
 /**
  *  开屏广告初始化失败
  */
 - (void)adapter:(id<WindSplashAdAdapter>)splashAdAdapter didFailToSetUpSplashAd:(NSError *)error;
 
+
+/**
+ *  开屏广告加载成功
+ */
+- (void)adapterDidAdDidLoad:(id<WindSplashAdAdapter>)splashAdAdapter strategy:(WADStrategy *)strategy options:(NSDictionary *)options;
+
+
+
 /**
  *  开屏广告成功展示
  */
--(void)adapterDidSuccessPresentScreen:(id<WindSplashAdAdapter>)splashAdAdapter;
+-(void)adapterDidSuccessPresentScreen:(id<WindSplashAdAdapter>)splashAdAdapter strategy:(WADStrategy *)strategy;
 
 /**
  *  开屏广告展示失败
  */
--(void)adapterDidFailToPresent:(id<WindSplashAdAdapter>)splashAdAdapter withError:(NSError *)error;
+-(void)adapterDidFailToPresent:(id<WindSplashAdAdapter>)splashAdAdapter strategy:(WADStrategy *)strategy error:(NSError *)error ;
 
 /**
  *  应用进入后台时回调
  *  详解: 当点击下载应用时会调用系统程序打开，应用切换到后台
  */
-- (void)adapterDidApplicationWillEnterBackground:(id<WindSplashAdAdapter>)splashAdAdapter;
+- (void)adapterDidApplicationWillEnterBackground:(id<WindSplashAdAdapter>)splashAdAdapter strategy:(WADStrategy *)strategy;
 
 /**
  *  开屏广告点击回调
  */
-- (void)adapterDidClicked:(id<WindSplashAdAdapter>)splashAdAdapter;
+- (void)adapterDidClicked:(id<WindSplashAdAdapter>)splashAdAdapter strategy:(WADStrategy *)strategy;
+
+
+/**
+ *  开屏广告点击跳过
+ */
+- (void)adapterDidSkiped:(id<WindSplashAdAdapter>)splashAdAdapter strategy:(WADStrategy *)strategy;
 
 /**
  *  开屏广告将要关闭回调
  */
-- (void)adapterDidWillClosed:(id<WindSplashAdAdapter>)splashAdAdapter;
+- (void)adapterDidWillClosed:(id<WindSplashAdAdapter>)splashAdAdapter strategy:(WADStrategy *)strategy;
 
 /**
  *  开屏广告关闭回调
  */
-- (void)adapterDidClosed:(id<WindSplashAdAdapter>)splashAdAdapter;
+- (void)adapterDidClosed:(id<WindSplashAdAdapter>)splashAdAdapter strategy:(WADStrategy *)strategy;
 
 @end

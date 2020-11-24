@@ -31,6 +31,12 @@
  */
 - (void)onSplashAdClicked:(WindSplashAd *)splashAd;
 
+
+/**
+ *  开屏广告点击跳过
+ */
+- (void)onSplashAdSkiped:(WindSplashAd *)splashAd;
+
 /**
  *  开屏广告将要关闭回调
  */

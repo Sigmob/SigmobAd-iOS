@@ -46,6 +46,7 @@
 "Mraid ads does not support the application os version" = "Mraid ads does not support the application os version";
 "Not loaded into resource bundle(Sigmob.bundle)" = "Not loaded into resource bundle(Sigmob.bundle)";
 "Placement id is empty" = "Placement id is empty";
+"The adapter version of the channel does not match" = "The adapter version of the channel does not match";
 
 //splash Ad
 "Skip Ad" = "Skip Ad";b
