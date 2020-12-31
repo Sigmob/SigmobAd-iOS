@@ -1,4 +1,4 @@
-/* 
+/*
   SigmobLanguage.strings
   Sigmob
 
@@ -47,6 +47,10 @@
 "Not loaded into resource bundle(Sigmob.bundle)" = "缺少资源包Sigmob.bundle";
 "Placement id is empty" = "广告位id为空";
 "The adapter version of the channel does not match" = "渠道的适配器版本不匹配";
+"The AD cannot be loaded during the playback. Please do automatic loading when the AD is closed" = "广告正在播放中，如果需要自动加载，请在广告关闭的回调中处理";
+"The AD is loading, please wait" = "广告正在加载中，请稍后";
+"Ads load too frequently, please try again later" = "广告加载频繁，请稍后在试";
+
 
 //splash Ad
 "Skip Ad" = "跳过广告";
@@ -61,3 +65,4 @@
 "Cancel" = "继续播放";
 "You will be rewarded with only _SEC_ seconds." = "还剩_SEC_秒，您就可以获得奖励了哦!";
 "Close" = "关闭";
+

@@ -1,11 +1,3 @@
-/* 
-  SigmobLanguage.strings
-  Sigmob
-
-  Created by happyelements on 2019/11/6.
-  Copyright © 2019 happyelements. All rights reserved.
-*/
-
 // Error
 "Unknown error" = "Unknown error";
 "IDFA information is missing from the request parameter" = "IDFA information is missing from the request parameter";
@@ -47,9 +39,11 @@
 "Not loaded into resource bundle(Sigmob.bundle)" = "Not loaded into resource bundle(Sigmob.bundle)";
 "Placement id is empty" = "Placement id is empty";
 "The adapter version of the channel does not match" = "The adapter version of the channel does not match";
-
+"The AD cannot be loaded during the playback. Please do automatic loading when the AD is closed" = "The AD cannot be loaded during the playback. Please do automatic loading when the AD is closed";
+"The AD is loading, please wait" = "The AD is loading, please wait";
+"Ads load too frequently, please try again later" = "Ads load too frequently, please try again later";
 //splash Ad
-"Skip Ad" = "Skip Ad";b
+"Skip Ad" = "Skip Ad";
 "Skip" = "Skip";
 "Ad" = "Ad";
 
@@ -58,4 +52,5 @@
 "Confirm" = "Confirm";
 "Cancel" = "Cancel";
 "You will be rewarded with only _SEC_ seconds." = "You will be rewarded with only _SEC_ seconds.";
+
 
