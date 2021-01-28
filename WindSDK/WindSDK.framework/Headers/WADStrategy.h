@@ -25,6 +25,15 @@ static NSString *const WindAdsSDKChannelSigmob = @"sigmob";
 @property (nonatomic, copy) NSString *playDirection;
 @property (nonatomic, copy) NSString *appName;
 
+@property (nonatomic, copy) NSString *countdown;
+@property (nonatomic, copy) NSString *allowSkip;
+@property (nonatomic, copy) NSString *subType;
+@property (nonatomic, copy) NSString *ratio;
+@property (nonatomic, copy) NSString *autoPlayPolicy;
+@property (nonatomic, copy) NSString *autoPlayMuted;
+@property (nonatomic, copy) NSString *detailPageMuted;
+@property (nonatomic, copy) NSString *minVideoDuration;
+@property (nonatomic, copy) NSString *maxVideoDuration;
 @end
 
 
@@ -33,16 +42,18 @@ static NSString *const WindAdsSDKChannelSigmob = @"sigmob";
 @property (nonatomic,copy) NSString *placementId;
 @property (nonatomic,copy) NSString *adapterClass;
 @property (nonatomic,copy) NSString *name;
+@property (nonatomic, assign) NSUInteger adType;
 @property (nonatomic,strong) WADOptions *options;
 @property (nonatomic,copy) NSString *loadId;
-@property (nonatomic,copy) NSString *channelId;
+@property(nonatomic, assign) uint32_t channelId;
+@property(nonatomic, assign) BOOL enableAbTest;
+@property(nonatomic, readwrite) uint32_t abFlag;
+@property (nonatomic, copy) NSString *strategyId;
+@property(nonatomic, readwrite) uint32_t elementId;
+@property (nonatomic, assign) NSUInteger index;
 /** 渠道广告素材有效期。默认3600s过期，0代表不设置过期不展示逻辑，最小颗粒度为 900s（15 min） */
 @property(nonatomic, readwrite) uint32_t adExpireTime;
 @property(nonatomic, readwrite) uint32_t adReadyTime;
 @property (nonatomic, strong) SMGCDTimer *gcdTimer;
-
-
-
-
 
 @end

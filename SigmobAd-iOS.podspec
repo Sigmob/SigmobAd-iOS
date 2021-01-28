@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "2.24.0"
+  spec.version      = "2.25.0"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   
   spec.description      = <<-DESC
@@ -81,12 +81,14 @@ Pod::Spec.new do |spec|
     ss.dependency 'SigmobAd-iOS/WindSDK'
     ss.dependency 'MintegralAdSDK/RewardVideoAd', '6.6.0'
     ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '6.6.0'
+    ss.dependency 'MintegralAdSDK/InterstitialAd', '6.6.0'
+    ss.dependency 'MintegralAdSDK/SplashAd', '6.6.0'
   end
 
   spec.subspec 'SigmobTouTiaoAdapter' do |ss|
      ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'WindSDK/Toutiao/*.a'
-     ss.dependency 'Bytedance-UnionAD', '3.2.5.2'
+     ss.dependency 'Bytedance-UnionAD', '3.3.6.1'
      ss.dependency 'SigmobAd-iOS/WindSDK'
   end
 

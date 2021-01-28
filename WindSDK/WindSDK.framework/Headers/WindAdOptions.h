@@ -10,10 +10,19 @@
 
 @interface WindAdOptions : NSObject
 
-@property (copy, nonatomic) NSString* appId;
-@property (copy, nonatomic) NSString* apiKey;
+/// Sigmob平台申请的appId
+@property (copy, nonatomic, readonly) NSString* appId;
+/// Sigmob平台申请的appKey
+@property (copy, nonatomic, readonly) NSString* appKey;
+/// 声明是否使用的是聚合 default = NO
+@property (nonatomic, assign, readonly) BOOL usedMediation;
 
-//Quickly generate the current object.
-+ (instancetype)options;
+
+- (instancetype)initWithAppId:(NSString *)appId appKey:(NSString *)appKey usedMediation:(BOOL)usedMediation;
+
+// 非单例
++ (instancetype)options NS_UNAVAILABLE;;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
