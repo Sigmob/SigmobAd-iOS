@@ -28,7 +28,7 @@
 "The configured policy is empty" = "配置的策略为空";
 "File download error" = "文件下载错误";
 "Reward Video ad play error" = "激励视频播放出错";
-"Ad is not ready" = "广告未准备好";
+"Ad is not ready" = "激励视频未准备好";
 "The advertising information sent by server is missing key information" = "server下发的广告信息缺失关键信息";
 "The downloaded file checked md5 error" = "下载的文件校验md5出错";
 "Ad download is timeout" = "广告加载超时";

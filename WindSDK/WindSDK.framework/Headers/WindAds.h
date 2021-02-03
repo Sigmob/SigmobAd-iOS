@@ -37,6 +37,8 @@ typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
 
 @interface WindAds : NSObject
 
+@property (nonatomic,strong) WindAdOptions *adOptions;
+
 + (instancetype)sharedAds;
 
 + (NSString *)sdkVersion;

@@ -20,8 +20,8 @@
 #import <WindSDK/WindSplashAd.h>
 #import <WindSDK/WindSplashAdAdapter.h>
 #import <WindSDK/WindSplashAdConnector.h>
-#import <WindSDK/WindInterstitialAd.h>
-#import <WindSDK/WindInterstitialAdProtocol.h>
+#import <WindSDK/WindFullscreenVideoAd.h>
+#import <WindSDK/WindFullscreenVideoAdProtocol.h>
 #import <WindSDK/SIGLog.h>
 
 
