@@ -1,3 +1,11 @@
+/* 
+  SigmobLanguage.strings
+  Sigmob
+
+  Created by happyelements on 2019/11/6.
+  Copyright © 2019 happyelements. All rights reserved.
+*/
+
 // Error
 "Unknown error" = "Unknown error";
 "IDFA information is missing from the request parameter" = "IDFA information is missing from the request parameter";
@@ -52,5 +60,4 @@
 "Confirm" = "Confirm";
 "Cancel" = "Cancel";
 "You will be rewarded with only _SEC_ seconds." = "You will be rewarded with only _SEC_ seconds.";
-
 

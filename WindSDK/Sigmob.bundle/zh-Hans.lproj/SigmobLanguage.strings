@@ -1,4 +1,4 @@
-/*
+/* 
   SigmobLanguage.strings
   Sigmob
 
@@ -65,4 +65,3 @@
 "Cancel" = "继续播放";
 "You will be rewarded with only _SEC_ seconds." = "还剩_SEC_秒，您就可以获得奖励了哦!";
 "Close" = "关闭";
-
