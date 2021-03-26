@@ -14,8 +14,6 @@
 
 @property (nonatomic,copy) NSString *placementId;
 
-@property (nonatomic,copy) NSString *loadId;
-
 //做为扩展参数使用
 @property (nonatomic,strong) NSDictionary<NSString *, NSString *> *options;
 

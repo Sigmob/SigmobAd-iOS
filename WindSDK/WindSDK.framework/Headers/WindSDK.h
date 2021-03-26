@@ -12,17 +12,25 @@
 #import <WindSDK/WindAds.h>
 #import <WindSDK/WindAdOptions.h>
 #import <WindSDK/WindRewardedVideoAd.h>
-#import <WindSDK/WindRewardVideoAdProtocol.h>
-#import <WindSDK/WindProtocol.h>
 #import <WindSDK/WindRewardInfo.h>
 #import <WindSDK/WindAdRequest.h>
 #import <WindSDK/WADStrategy.h>
 #import <WindSDK/WindSplashAd.h>
+#import <WindSDK/WindInterstitialAd.h>
+#import <WindSDK/WindAdAdapter.h>
+#import <WindSDK/WindAdConnector.h>
+#import <WindSDK/SIGLog.h>
+#import <WindSDK/WindProtocol.h>
+#import <WindSDK/WindInterstitialAdProtocol.h>
+#import <WindSDK/WindRewardVideoAdProtocol.h>
 #import <WindSDK/WindSplashAdAdapter.h>
 #import <WindSDK/WindSplashAdConnector.h>
-#import <WindSDK/WindInterstitialAd.h>
-#import <WindSDK/WindInterstitialAdProtocol.h>
-#import <WindSDK/SIGLog.h>
+
+
+
+
+
+
 
 
 

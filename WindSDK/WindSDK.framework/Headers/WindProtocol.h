@@ -10,6 +10,7 @@
 #define WindProtocol_h
 
 #import <UIKit/UIKit.h>
+#import "WindAdAdapter.h"
 
 @class WindAdRequest;
 @class WADStrategy;
@@ -27,23 +28,16 @@
 @end
 
 
-@protocol WindAdAdapter<NSObject>
+@protocol WindVideoAdAdapter<WindAdBaseAdappter>
 
 @required
 
-- (void)setup:(NSDictionary *)options;
-
-- (NSUInteger)adapterVersion;
-
-- (NSString *)sdkVersion;
-
-- (BOOL)isReadyWithStrategy:(WADStrategy *)strategy;
+- (void)loadAd:(NSString *)placementId strategy:(WADStrategy *)strategy;
 
 - (void)presentAdWithViewController:(UIViewController *)controller
                            strategy:(WADStrategy *)strategy
                         placementId:(NSString *)placementId
                             options:(NSDictionary *)options;
-
 
 @end
 

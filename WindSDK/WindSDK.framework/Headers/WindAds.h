@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <WindSDK/WindAdOptions.h>
 
-
-
-extern NSString *WindAdSceneName;
+extern NSString * const WindAdSceneName;
+extern NSString * const WindAdInterval;
+extern NSString * const WindAdSize;
+extern NSString * const WindAdRootViewController;
 
 typedef NS_ENUM(NSUInteger, WindLogLevel){
     WindLogLevelError=8,
@@ -41,9 +42,6 @@ typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
 
 + (NSString *)sdkVersion;
 
-
-
-
 // Initialize Wind Ads SDK
 + (void) startWithOptions:(WindAdOptions *)options;
 
@@ -54,11 +52,9 @@ typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
  */
 - (void)setDebugEnable:(BOOL)enable;
 
-
 /// 提供新的资源包，需要把sigmob.bundle的文件放入到新的bundle内。
 /// @param name bundle名称（前缀）
 + (void)setNewBundleName:(NSString *)name;
-
 
 /**
  *   自定义debug 内容回调显示
@@ -71,14 +67,17 @@ typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
 #pragma mark - GDPR SUPPORT
 /**************************  GDPR  *********************************/
 + (WindConsentStatus)getUserGDPRConsentStatus;
+
 + (void)setUserGDPRConsentStatus:(WindConsentStatus)status;
 
 #pragma mark - Age SUPPORT
 /**************************  Age *********************************/
 + (WindAgeRestrictedStatus)getAgeRestrictedStatus;
+
 + (void)setIsAgeRestrictedUser:(WindAgeRestrictedStatus)status;
 
 + (NSUInteger)getUserAge;
+
 + (void)setUserAge:(NSUInteger)age;
 
 @end

@@ -15,13 +15,11 @@
 @protocol WindRewardVideoAdConnector;
 
 // Your adapter must conform to this protocol to provide reward based video ads.
-@protocol WindRewardVideoAdAdapter<WindAdAdapter>
+@protocol WindRewardVideoAdAdapter<WindVideoAdAdapter>
 
 @required
 
 - (instancetype)initWithWADRewardVideoAdConnector:(id<WindRewardVideoAdConnector>)connector;
-
-- (void)loadAd:(NSString *)placementId strategy:(WADStrategy *)strategy;
 
 @end
 

@@ -36,7 +36,7 @@
 
 //******************************************************************************************************
 
-@protocol WindInterstitialAdAdapter <WindAdAdapter>
+@protocol WindInterstitialAdAdapter <WindVideoAdAdapter>
 
 @required
 
