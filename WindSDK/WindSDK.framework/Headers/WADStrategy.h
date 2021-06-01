@@ -53,7 +53,11 @@ static NSString *const WindAdsSDKChannelSigmob = @"sigmob";
 @property (nonatomic, assign) NSUInteger index;
 /** 渠道广告素材有效期。默认3600s过期，0代表不设置过期不展示逻辑，最小颗粒度为 900s（15 min） */
 @property(nonatomic, readwrite) uint32_t adExpireTime;
-@property(nonatomic, readwrite) uint32_t adReadyTime;
+@property(nonatomic, readwrite) uint64_t adReadyTime;
+@property(nonatomic, readwrite) uint32_t singleChannelTimeout;
 @property (nonatomic, strong) SMGCDTimer *gcdTimer;
+
+- (BOOL)isExpired;
+
 
 @end

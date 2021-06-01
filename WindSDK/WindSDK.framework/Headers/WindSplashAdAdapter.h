@@ -10,29 +10,19 @@
 #import <UIKit/UIKit.h>
 
 @class WADStrategy;
-@protocol WindSplashAdConnector;
-@protocol WindSplashAdAdapter<NSObject>
+@protocol WindAdAdapter;
 
-@required
+@protocol WindSplashAdAdapter<WindAdAdapter>
 
-- (instancetype)initWithWADSplashAdConnector:(id<WindSplashAdConnector>)connector;
-
-- (void)setup:(NSDictionary *)options;
-
--(void)loadAdAndShow:(WADStrategy *)strategy logoView:(UIView *)bottomView options:(NSDictionary *)options;
-
+-(void)loadAdAndShow:(WADStrategy *)strategy
+            logoView:(UIView *)bottomView
+             options:(NSDictionary *)options;
 
 -(void)show:(WADStrategy *)strategy
      window:(UIWindow *)window
 bottomView:(UIView *)bottomView
     options:(NSDictionary *)options;
 
-
-- (BOOL)isReadyWithStrategy:(WADStrategy *)strategy;
-
-- (NSUInteger)adapterVersion;
-
-- (NSString *)sdkVersion;
 
 
 @end

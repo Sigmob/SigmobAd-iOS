@@ -10,23 +10,34 @@
 #define WindAdAdapter_h
 
 #import <UIKit/UIKit.h>
-#import "WindAdConnector.h"
 
 @class WADStrategy;
+@protocol WindAdConnector;
 
-@protocol WindAdBaseAdappter <NSObject>
-
-@optional
-- (instancetype)initWithAdConnector:(id<WindAdConnector>)connector;
+@protocol WindAdAdapter <NSObject>
 
 @required
-- (void)setup:(NSDictionary *)options;
+- (instancetype)initWithAdConnector:(id<WindAdConnector>)connector;
+
++ (BOOL)isInitilized;
+
+- (void)setup:(WADStrategy *)strategy options:(NSDictionary *)options;
 
 - (BOOL)isReadyWithStrategy:(WADStrategy *)strategy;
 
 - (NSUInteger)adapterVersion;
 
 - (NSString *)sdkVersion;
+
+@optional
+
+- (void)destory;
+
+- (void)loadAd:(WADStrategy *)strategy;
+
+- (void)presentAdWithViewController:(UIViewController *)controller
+                           strategy:(WADStrategy *)strategy
+                            options:(NSDictionary *)options;
 
 @end
 

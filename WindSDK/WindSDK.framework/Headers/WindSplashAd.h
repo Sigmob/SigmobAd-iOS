@@ -23,6 +23,11 @@ extern NSString * const kSMSplashExtraRootViewController;
 - (void)onSplashAdDidLoad:(WindSplashAd *)splashAd;
 
 /**
+ *  开屏广告展示失败
+ */
+-(void)onSplashAdLoadFail:(WindSplashAd *)splashAd error:(NSError *)error;
+
+/**
  *  开屏广告成功展示
  */
 -(void)onSplashAdSuccessPresentScreen:(WindSplashAd *)splashAd;
@@ -60,11 +65,6 @@ extern NSString * const kSMSplashExtraRootViewController;
 
 @property (nonatomic,weak) id<WindSplashAdDelegate> delegate;
 
-
-// If nil, window will not appear on any screen.
-// changing the UIWindowScene may be an expensive operation and should not be done in performance-sensitive code
-@property(nonatomic, weak) UIWindowScene *windowScene API_AVAILABLE(ios(13.0));
-
 /**
  *  拉取广告超时时间，默认为3秒
  *  详解：拉取广告超时时间，开发者调用loadAd方法以后会立即展示app的启动图，然后在该超时时间内，如果广告拉
@@ -87,38 +87,6 @@ extern NSString * const kSMSplashExtraRootViewController;
 @property (nonatomic,strong, readonly) NSString *placementId;
 
 @property (nonatomic,strong) NSString *userId;
-
-/**
- 初始化splash ad对象（如果是加载和播放分开处理，请使用该构造函数）
- @param placementId 广告位ID
- @param extra 各个平台需要的扩展参数，可以根据聚合的平台设置，
- 详细参考在线文档：http://docs.sigmob.cn/#/sdk/SDK%E6%8E%A5%E5%85%A5/ios/
- */
-- (instancetype)initWithPlacementId:(NSString *)placementId
-                              extra:(NSDictionary *)extra;
-
-/**
- *  发起拉取广告请求，只拉取不展示
- *  详解：广告素材及广告图片拉取成功后会回调onSplashAdDidLoad方法，当拉取失败时会回调onSplashAdFailToPresent方法
- */
-- (void)loadAd;
-
-/**
- *  展示广告，调用此方法前需调用isAdValid方法判断广告素材是否有效
- *  详解：广告展示成功时会回调onSplashAdSuccessPresentScreen方法，展示失败时会回调onSplashAdFailToPresent方法
- */
-- (void)showAdInWindow:(UIWindow *)window withBottomView:(UIView *)bottomView;
-
-
-/**
- *  广告发起请求并展示在Window中, 同时在屏幕底部设置应用自身的Logo页面
- *  详解：[logo会自动读取应用图标]，请中高度位100，宽度为屏幕宽度
- *
- @param window 容器
- @param title 设置标题
- @param desc 设置描述信息
- */
-- (void)showAdInWindow:(UIWindow *)window title:(NSString *)title desc:(NSString *)desc;
 
 
 
@@ -162,5 +130,45 @@ extern NSString * const kSMSplashExtraRootViewController;
  @param description 设置描述信息
  */
 - (void)loadADAndShowWithTitle:(NSString *)title description:(NSString *)description;
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ 初始化splash ad对象（如果是加载和播放分开处理，请使用该构造函数）
+ @param placementId 广告位ID
+ @param extra 各个平台需要的扩展参数，可以根据聚合的平台设置，
+ 详细参考在线文档：http://docs.sigmob.cn/#/sdk/SDK%E6%8E%A5%E5%85%A5/ios/
+ extra: 中必填参数：kSMSplashExtraRootViewController & kSMSplashExtraAdSize
+ extra参数介绍：https://support.sigmob.com/#/sdk%E9%9B%86%E6%88%90/iOS/%E5%B9%BF%E5%91%8A%E5%BD%A2%E5%BC%8F%E5%8F%8A%E6%8E%A5%E5%85%A5/%E5%BC%80%E5%B1%8F%E5%B9%BF%E5%91%8A/?id=extra-%e5%8f%82%e6%95%b0%e4%bb%8b%e7%bb%8d
+ */
+- (instancetype)initWithPlacementId:(NSString *)placementId
+                              extra:(NSDictionary *)extra;
+
+/**
+ *  发起拉取广告请求，只拉取不展示
+ *  详解：广告素材及广告图片拉取成功后会回调onSplashAdDidLoad方法，当拉取失败时会回调onSplashAdFailToPresent方法
+ */
+- (void)loadAd;
+
+/**
+ *  展示广告，调用此方法前需调用isAdValid方法判断广告素材是否有效
+ *  详解：广告展示成功时会回调onSplashAdSuccessPresentScreen方法，展示失败时会回调onSplashAdFailToPresent方法
+ */
+- (void)showAdInWindow:(UIWindow *)window withBottomView:(UIView *)bottomView;
+
+
+/**
+ *  广告发起请求并展示在Window中, 同时在屏幕底部设置应用自身的Logo页面
+ *  详解：[logo会自动读取应用图标]，请中高度位100，宽度为屏幕宽度
+ *
+ @param window 容器
+ @param title 设置标题
+ @param desc 设置描述信息
+ */
+- (void)showAdInWindow:(UIWindow *)window title:(NSString *)title desc:(NSString *)desc;
 
 @end

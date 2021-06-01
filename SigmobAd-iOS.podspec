@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "3.0.2"
+  spec.version      = "3.1.0"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   
   spec.description      = <<-DESC
@@ -42,7 +42,7 @@ Pod::Spec.new do |spec|
      ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'WindSDK/Admob/*.a'
      ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '7.69.0'
+     ss.dependency 'Google-Mobile-Ads-SDK', '8.3.0'
   end
 
   spec.subspec 'SigmobAppLovinAdapter' do |ss|
@@ -63,7 +63,7 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/GDT/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'GDTMobSDK', '4.12.3'
+    ss.dependency 'GDTMobSDK', '4.12.60'
   end
 
 
@@ -79,10 +79,10 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/Mintegral/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'MintegralAdSDK/RewardVideoAd', '6.7.6'
-    ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '6.7.6'
-    ss.dependency 'MintegralAdSDK/InterstitialAd', '6.7.6'
-    ss.dependency 'MintegralAdSDK/SplashAd', '6.7.6'
+    ss.dependency 'MintegralAdSDK/RewardVideoAd', '6.8.0'
+    ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '6.8.0'
+    ss.dependency 'MintegralAdSDK/InterstitialAd', '6.8.0'
+    ss.dependency 'MintegralAdSDK/SplashAd', '6.8.0'
   end
 
   spec.subspec 'SigmobTouTiaoAdapter' do |ss|
@@ -97,14 +97,14 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/Vungle/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'VungleSDK-iOS', '6.9.1'
+    ss.dependency 'VungleSDK-iOS', '6.9.2'
   end
 
 
   spec.subspec 'SigmobUnityAdsAdapter' do |ss|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/UnityAds/*.a'
-    ss.dependency 'UnityAds', '3.6.0'
+    ss.dependency 'UnityAds', '3.7.1'
     ss.dependency 'SigmobAd-iOS/WindSDK'
   end
 
