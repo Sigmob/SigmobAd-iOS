@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WindAdConnector.h"
 
 @protocol WindIntersititialAdConnector <WindAdConnector>
 

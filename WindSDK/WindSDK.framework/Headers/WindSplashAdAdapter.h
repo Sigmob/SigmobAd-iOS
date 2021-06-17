@@ -8,9 +8,10 @@
 
 
 #import <UIKit/UIKit.h>
+#import "WindAdAdapter.h"
 
 @class WADStrategy;
-@protocol WindAdAdapter;
+@protocol WindSplashAdConnector;
 
 @protocol WindSplashAdAdapter<WindAdAdapter>
 
