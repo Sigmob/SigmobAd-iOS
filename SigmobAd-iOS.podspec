@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "3.1.2"
+  spec.version      = "3.2.0"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   
   spec.description      = <<-DESC
@@ -42,14 +42,14 @@ Pod::Spec.new do |spec|
      ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'WindSDK/Admob/*.a'
      ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '8.3.0'
+     ss.dependency 'Google-Mobile-Ads-SDK', '8.5.0'
   end
 
   spec.subspec 'SigmobAppLovinAdapter' do |ss|
      ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'WindSDK/Applovin/*.a'
      ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'AppLovinSDK', '6.14.2'
+     ss.dependency 'AppLovinSDK', '10.3.2'
   end
 
   spec.subspec 'SigmobFacebookAdapter' do |ss|
@@ -63,7 +63,7 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/GDT/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'GDTMobSDK', '4.12.60'
+    ss.dependency 'GDTMobSDK', '4.12.71'
   end
 
 
@@ -71,7 +71,7 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/Ironsource/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'IronSourceSDK', '7.0.1.0'
+    ss.dependency 'IronSourceSDK', '7.1.6.1'
   end
   
 
@@ -79,17 +79,17 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/Mintegral/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'MintegralAdSDK/RewardVideoAd', '6.8.0'
-    ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '6.8.0'
-    ss.dependency 'MintegralAdSDK/InterstitialAd', '6.8.0'
-    ss.dependency 'MintegralAdSDK/SplashAd', '6.8.0'
+    ss.dependency 'MintegralAdSDK/RewardVideoAd', '6.9.1'
+    ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '6.9.1'
+    ss.dependency 'MintegralAdSDK/InterstitialAd', '6.9.1'
+    ss.dependency 'MintegralAdSDK/SplashAd', '6.9.1'
   end
 
   spec.subspec 'SigmobTouTiaoAdapter' do |ss|
      ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'WindSDK/Toutiao/*.a'
      ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'Ads-CN', '3.5.1.2'
+     ss.dependency 'Ads-CN', '3.6.1.5'
   end
 
 
@@ -104,7 +104,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'SigmobUnityAdsAdapter' do |ss|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/UnityAds/*.a'
-    ss.dependency 'UnityAds', '3.7.1'
+    ss.dependency 'UnityAds', '3.7.2'
     ss.dependency 'SigmobAd-iOS/WindSDK'
   end
 
@@ -118,7 +118,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'SigmobKSAdapter' do |ss|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/SigmobKS/*.a'
-    ss.dependency 'KSAdSDK', '3.3.8.3'
+    ss.dependency 'KSAdSDK', '3.3.10.1'
     ss.dependency 'SigmobAd-iOS/WindSDK'
   end
 

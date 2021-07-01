@@ -38,8 +38,6 @@ typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
 
 @interface WindAds : NSObject
 
-+ (instancetype)sharedAds;
-
 + (NSString *)sdkVersion;
 
 // Initialize Wind Ads SDK
@@ -50,18 +48,21 @@ typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
  *
  *  @param enable true 开启debug，false 关闭debug
  */
-- (void)setDebugEnable:(BOOL)enable;
++ (void)setDebugEnable:(BOOL)enable;
 
-/// 提供新的资源包，需要把sigmob.bundle的文件放入到新的bundle内。
-/// @param name bundle名称（前缀）
-+ (void)setNewBundleName:(NSString *)name;
 
 /**
  *   自定义debug 内容回调显示
  *
  *  @param callBack debugBlock，若不设置则在Xcode debug中显示，
  */
-- (void)setDebugCallBack:(WindAdDebugCallBack)callBack;
++ (void)setDebugCallBack:(WindAdDebugCallBack)callBack;
+
+/// 提供新的资源包，需要把sigmob.bundle的文件放入到新的bundle内。
+/// @param name bundle名称（前缀）
++ (void)setNewBundleName:(NSString *)name;
+
+
 
 
 #pragma mark - GDPR SUPPORT

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WindAdConnector.h"
 
 @class WindRewardInfo;
 

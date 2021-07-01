@@ -24,6 +24,7 @@ static NSString *const WindAdsSDKChannelSigmob = @"sigmob";
 @property (nonatomic,copy) NSString *publisherId;
 @property (nonatomic, copy) NSString *playDirection;
 @property (nonatomic, copy) NSString *appName;
+@property (nonatomic, copy) NSString *bidToken;
 
 @property (nonatomic, copy) NSString *countdown;
 @property (nonatomic, copy) NSString *allowSkip;

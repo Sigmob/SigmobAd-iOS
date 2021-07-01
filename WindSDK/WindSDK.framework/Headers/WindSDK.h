@@ -22,16 +22,6 @@
 
 #import <WindSDK/WindSplashAd.h>
 #import <WindSDK/WindRewardVideoAd.h>
+#import <WindSDK/WindBiddingRewardVideoAd.h>
 #import <WindSDK/WindIntersititialAd.h>
-
-
-
-
-
-
-
-
-
-
-
-
+#import <WindSDK/WindBiddingIntersititialAd.h>
