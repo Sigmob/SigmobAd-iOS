@@ -9,11 +9,7 @@
 #ifndef SMSIGLog_h
 #define SMSIGLog_h
 
-#ifdef __cplusplus
 #import <Foundation/Foundation.h>
-#else
-@import Foundation;
-#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +18,6 @@ typedef NS_ENUM(NSUInteger, SIGLogLevel){
     SIGLogLevelInfo=4,
     SIGLogLevelWarning=6,
     SIGLogLevelError=8,
-    
 };
 
 

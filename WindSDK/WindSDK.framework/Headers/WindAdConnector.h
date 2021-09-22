@@ -10,13 +10,13 @@
 #define WindAdConnector_h
 
 #import <Foundation/Foundation.h>
+#import <WindSDK/WindAdBaseConnector.h>
 
 @class WADStrategy;
 @class WindAdRequest;
 
 
-
-@protocol WindAdConnector <NSObject>
+@protocol WindAdConnector <WindAdBaseConnector>
 
 @required
 
@@ -26,16 +26,6 @@
 
 @optional
 
-/**
- *
- *  初始化成功
- */
-- (void)adapterDidSuccessedSetUp;
-
-/**
- *  初始化失败
- */
-- (void)adapterDidFailToSetUp:(WADStrategy *)strategy error:(NSError *)error;
 
 /**
  *  广告加载成功

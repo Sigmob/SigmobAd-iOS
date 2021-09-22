@@ -21,6 +21,13 @@ typedef NS_ENUM(NSUInteger, WindLogLevel){
     WindLogLevelDebug=2
 };
 
+typedef NS_ENUM (NSInteger, WindCCPAStatus) {
+    WindCCPAUnknown = 0,
+    WindCCPAAccepted,
+    WindCCPADenied,
+};
+
+
 typedef NS_ENUM (NSInteger, WindConsentStatus) {
     WindConsentUnknown = 0,
     WindConsentAccepted,
@@ -62,6 +69,11 @@ typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
 /// @param name bundle名称（前缀）
 + (void)setNewBundleName:(NSString *)name;
 
+
+#pragma mark - CCPA SUPPORT
++ (void)updateCCPAStatus:(WindCCPAStatus)status;
+
++ (WindCCPAStatus)getCCPAStatus;
 
 
 

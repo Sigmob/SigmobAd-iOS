@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "3.2.5"
+  spec.version      = "3.4.0"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   
   spec.description      = <<-DESC
@@ -42,7 +42,7 @@ Pod::Spec.new do |spec|
      ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'WindSDK/Admob/*.a'
      ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '8.5.0'
+     ss.dependency 'Google-Mobile-Ads-SDK', '8.6.0'
   end
 
   spec.subspec 'SigmobAppLovinAdapter' do |ss|
@@ -52,18 +52,11 @@ Pod::Spec.new do |spec|
      ss.dependency 'AppLovinSDK', '10.3.2'
   end
 
-  spec.subspec 'SigmobFacebookAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
-     ss.vendored_libraries = 'WindSDK/Facebook/*.a'
-     ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'FBAudienceNetwork', '6.0.0'
-  end
-
   spec.subspec 'SigmobGDTAdapter' do |ss|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/GDT/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'GDTMobSDK', '4.12.71'
+    ss.dependency 'GDTMobSDK', '4.13.10'
   end
 
 
@@ -79,17 +72,17 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/Mintegral/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'MintegralAdSDK/RewardVideoAd', '6.9.1'
-    ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '6.9.1'
-    ss.dependency 'MintegralAdSDK/InterstitialAd', '6.9.1'
-    ss.dependency 'MintegralAdSDK/SplashAd', '6.9.1'
+    ss.dependency 'MintegralAdSDK/RewardVideoAd', '6.9.4'
+    ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '6.9.4'
+    ss.dependency 'MintegralAdSDK/InterstitialAd', '6.9.4'
+    ss.dependency 'MintegralAdSDK/SplashAd', '6.9.4'
   end
 
   spec.subspec 'SigmobTouTiaoAdapter' do |ss|
      ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'WindSDK/Toutiao/*.a'
      ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'Ads-CN', '3.6.1.5'
+     ss.dependency 'Ads-CN', '3.7.0.5'
   end
 
 
