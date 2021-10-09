@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "3.4.0"
+  spec.version      = "3.4.1"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   
   spec.description      = <<-DESC
