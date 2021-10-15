@@ -32,5 +32,6 @@
 #import <WindSDK/WindNativeAdsManager.h>
 #import <WindSDK/WindNativeAdView.h>
 #import <WindSDK/WindMediationNativeAd.h>
+#import <WindSDK/WindDislikeWords.h>
 
 
