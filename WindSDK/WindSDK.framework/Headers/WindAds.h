@@ -36,19 +36,9 @@ typedef NS_ENUM (NSInteger, WindConsentStatus) {
 
 typedef NS_ENUM (NSInteger, WindAgeRestrictedStatus) {
     WindAgeRestrictedStatusUnknow = 0,
-    WindAgeRestrictedStatusYES, //年龄受限制
-    WindAgeRestrictedStatusNO,  //成年人，年龄不受限制
+    WindAgeRestrictedStatusYES,
+    WindAgeRestrictedStatusNO,
 };
-
-typedef enum : NSUInteger {
-    WindAdult = 0,
-    WindChildren = 1,
-} WindAdultState;
-
-typedef enum : NSUInteger {
-    WindPersonalizedAdvertisingOn = 0,
-    WindPersonalizedAdvertisingOff = 1,
-} WindPersonalizedAdvertisingState;
 
 
 typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
@@ -99,20 +89,8 @@ typedef void(^WindAdDebugCallBack)(NSString *msg, WindLogLevel level);
 
 + (void)setIsAgeRestrictedUser:(WindAgeRestrictedStatus)status;
 
-#pragma mark - Adult SUPPORT
-/**************************  设置是否是成年人 *********************************/
-/// WindAdult: 成年人， WindChildren: 未成年人 default=WindAdult
-+ (void)setAdult:(WindAdultState)state;
-+ (WindAdultState)getAdultState;
-
-
-#pragma mark - PersonalizedAdvertisin SUPPORT
-/// WindPersonalizedAdvertisingOn: 开启个性化推荐， WindPersonalizedAdvertisingOff: 关闭个性化推荐, default=WindPersonalizedAdvertisingOn
-+ (void)setPersonalizedAdvertising:(WindPersonalizedAdvertisingState)state;
-+ (WindPersonalizedAdvertisingState)getPersonalizedAdvertisingState;
-
-
 + (NSUInteger)getUserAge;
+
 + (void)setUserAge:(NSUInteger)age;
 
 @end
