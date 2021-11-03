@@ -35,6 +35,11 @@ static NSString *const WindAdsSDKChannelSigmob = @"sigmob";
 @property (nonatomic, copy) NSString *detailPageMuted;
 @property (nonatomic, copy) NSString *minVideoDuration;
 @property (nonatomic, copy) NSString *maxVideoDuration;
+@property (nonatomic, copy) NSString *clickType;//0按钮点击；1全屏点击
+
+
+
+
 @end
 
 
