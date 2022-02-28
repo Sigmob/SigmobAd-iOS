@@ -34,7 +34,7 @@ Pod::Spec.new do |spec|
     ss.weak_framework = 'WebKit', 'UIKit', 'Foundation'
     ss.libraries = 'c++', 'z', 'sqlite3'
     ss.vendored_frameworks =  'WindSDK/WindSDK.framework'
-    ss.resource = 'WindSDK/Sigmob.bundle'
+    # ss.resource = 'WindSDK/Sigmob.bundle'
   end
 
 
@@ -98,13 +98,6 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/UnityAds/*.a'
     ss.dependency 'UnityAds', '3.7.2'
-    ss.dependency 'SigmobAd-iOS/WindSDK'
-  end
-
-  spec.subspec 'SigmobTapjoyAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/Tapjoy/*.a'
-    ss.dependency 'TapjoySDK', '12.7.0'
     ss.dependency 'SigmobAd-iOS/WindSDK'
   end
 
