@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "3.5.0"
+  spec.version      = "3.5.3"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   
   spec.description      = <<-DESC
@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
 
   # 默认的核心模块
   spec.subspec 'WindSDK' do |ss|
-    ss.frameworks = 'ImageIO','StoreKit', 'CFNetwork', 'CoreMedia', 'AdSupport', 'CoreMotion', 'MediaPlayer', 'CoreGraphics', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SafariServices', 'MobileCoreServices', 'SystemConfiguration'
+    ss.frameworks = 'ImageIO','StoreKit', 'CFNetwork', 'CoreMedia', 'AdSupport', 'CoreMotion', 'MediaPlayer', 'CoreGraphics', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SafariServices', 'MobileCoreServices', 'SystemConfiguration', 'AudioToolbox'
     ss.weak_framework = 'WebKit', 'UIKit', 'Foundation'
     ss.libraries = 'c++', 'z', 'sqlite3'
     ss.vendored_frameworks =  'WindSDK/WindSDK.framework'
@@ -56,7 +56,7 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/GDT/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'GDTMobSDK', '4.13.20'
+    ss.dependency 'GDTMobSDK', '4.13.42'
   end
 
 
@@ -72,10 +72,10 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/Mintegral/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'MintegralAdSDK/RewardVideoAd', '6.9.4'
-    ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '6.9.4'
-    ss.dependency 'MintegralAdSDK/InterstitialAd', '6.9.4'
-    ss.dependency 'MintegralAdSDK/SplashAd', '6.9.4'
+    ss.dependency 'MintegralAdSDK/RewardVideoAd', '7.0.2.0'
+    ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '7.0.2.0'
+    ss.dependency 'MintegralAdSDK/InterstitialAd', '7.0.2.0'
+    ss.dependency 'MintegralAdSDK/SplashAd', '7.0.2.0'
   end
 
   spec.subspec 'SigmobTouTiaoAdapter' do |ss|
