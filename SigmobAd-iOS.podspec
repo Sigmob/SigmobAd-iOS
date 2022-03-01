@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "3.5.3"
+  spec.version      = "3.5.4"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   
   spec.description      = <<-DESC
@@ -56,7 +56,7 @@ Pod::Spec.new do |spec|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/GDT/*.a'
     ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'GDTMobSDK', '4.13.42'
+    ss.dependency 'GDTMobSDK', '4.13.50'
   end
 
 
@@ -82,7 +82,7 @@ Pod::Spec.new do |spec|
      ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'WindSDK/Toutiao/*.a'
      ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'Ads-CN', '4.0.0.2'
+     ss.dependency 'Ads-CN', '4.2.5.6'
   end
 
 
@@ -104,7 +104,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'SigmobKSAdapter' do |ss|
     ss.ios.deployment_target = '9.0'
     ss.vendored_libraries = 'WindSDK/SigmobKS/*.a'
-    ss.dependency 'KSAdSDK', '3.3.10.1'
+    ss.dependency 'KSAdSDK', '3.3.20'
     ss.dependency 'SigmobAd-iOS/WindSDK'
   end
 
