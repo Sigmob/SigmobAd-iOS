@@ -9,21 +9,19 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "3.5.4"
+  spec.version      = "4.1.0"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
-  
   spec.description      = <<-DESC
-  Sigmob provides ADs which include splash、RewardVideo etc.
+  SigmobAd-iOS provides ADs which include native、banner、splash、RewardVideo etc.
                        DESC
 
   spec.homepage     = "http://www.sigmob.com/"
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.author       = { "Codi" => "codi.zhao@sigmob.com" }
-  spec.platform     = :ios, "8.0"
-  spec.ios.deployment_target = '8.0'
+  spec.platform     = :ios, "9.0"
+  spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :git => "https://github.com/Sigmob/iOS-SDK.git", :tag => "#{spec.version}" }
-  
+  spec.source       = { :http => "http://sdkres.sigmob.cn/wind/ios/4.1.0_0a5d8775f5edb86a541aaa6a22cee302/wind_release_ios_4.1.0_20220330.zip" }
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   spec.requires_arc = true
   spec.default_subspec = 'WindSDK'
@@ -33,79 +31,14 @@ Pod::Spec.new do |spec|
     ss.frameworks = 'ImageIO','StoreKit', 'CFNetwork', 'CoreMedia', 'AdSupport', 'CoreMotion', 'MediaPlayer', 'CoreGraphics', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SafariServices', 'MobileCoreServices', 'SystemConfiguration', 'AudioToolbox'
     ss.weak_framework = 'WebKit', 'UIKit', 'Foundation'
     ss.libraries = 'c++', 'z', 'sqlite3'
-    ss.vendored_frameworks =  'WindSDK/WindSDK.framework'
-    # ss.resource = 'WindSDK/Sigmob.bundle'
+    ss.vendored_frameworks = ['wind-sdk-ios/WindSDK.xcframework']
+    ss.preserve_paths = 'wind-sdk-ios/WindSDK.xcframework'
+    ss.dependency 'SigmobAd-iOS/WindFoundation'
   end
 
-
-  spec.subspec 'SigmobAdmobAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
-     ss.vendored_libraries = 'WindSDK/Admob/*.a'
-     ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '8.6.0'
-  end
-
-  spec.subspec 'SigmobAppLovinAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
-     ss.vendored_libraries = 'WindSDK/Applovin/*.a'
-     ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'AppLovinSDK', '10.3.2'
-  end
-
-  spec.subspec 'SigmobGDTAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/GDT/*.a'
-    ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'GDTMobSDK', '4.13.50'
-  end
-
-
-  spec.subspec 'SigmobIronSourceAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/Ironsource/*.a'
-    ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'IronSourceSDK', '7.1.6.1'
-  end
-  
-
-  spec.subspec 'SigmobMintegralAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/Mintegral/*.a'
-    ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'MintegralAdSDK/RewardVideoAd', '7.0.2.0'
-    ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '7.0.2.0'
-    ss.dependency 'MintegralAdSDK/InterstitialAd', '7.0.2.0'
-    ss.dependency 'MintegralAdSDK/SplashAd', '7.0.2.0'
-  end
-
-  spec.subspec 'SigmobTouTiaoAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
-     ss.vendored_libraries = 'WindSDK/Toutiao/*.a'
-     ss.dependency 'SigmobAd-iOS/WindSDK'
-     ss.dependency 'Ads-CN', '4.2.5.6'
-  end
-
-
-  spec.subspec 'SigmobVungleAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/Vungle/*.a'
-    ss.dependency 'SigmobAd-iOS/WindSDK'
-    ss.dependency 'VungleSDK-iOS', '6.9.2'
-  end
-
-
-  spec.subspec 'SigmobUnityAdsAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/UnityAds/*.a'
-    ss.dependency 'UnityAds', '3.7.2'
-    ss.dependency 'SigmobAd-iOS/WindSDK'
-  end
-
-  spec.subspec 'SigmobKSAdapter' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.vendored_libraries = 'WindSDK/SigmobKS/*.a'
-    ss.dependency 'KSAdSDK', '3.3.20'
-    ss.dependency 'SigmobAd-iOS/WindSDK'
+  spec.subspec 'WindFoundation' do |ss|
+     ss.vendored_frameworks = ['wind-sdk-ios/WindFoundation.xcframework']
+     ss.preserve_paths = 'wind-sdk-ios/WindFoundation.xcframework'
   end
 
 
