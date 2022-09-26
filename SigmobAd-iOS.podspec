@@ -9,19 +9,19 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "4.3.0"
-  spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
+  spec.version      = "4.4.0"
+  spec.summary      = "SigmobAd-iOS is a SDK from Sigmob providing AD service."
   spec.description      = <<-DESC
-  SigmobAd-iOS provides ADs which include native、banner、splash、RewardVideo etc.
+  SigmobAd-iOS provides ADs which include native、splash、RewardVideo、Interstitial etc.
                        DESC
 
-  spec.homepage     = "http://www.sigmob.com/"
+  spec.homepage     = "https://www.sigmob.com/"
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.author       = { "Codi" => "codi.zhao@sigmob.com" }
   spec.platform     = :ios, "9.0"
   spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :http => 'http://sdkres.sigmob.cn/wind/ios/4.3.0_fcedec9d5439e0b6c2467cecd9cf17c7/wind_release_ios_4.3.0_20220830.zip' }
+  spec.source       = { :http => 'https://sdkres.sigmob.cn/wind/ios/4.4.0_54150656ac7c6d4882b7ea3f1b9be105/wind_release_ios_4.4.0_20220926.zip' }
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   spec.requires_arc = true
   spec.default_subspec = 'WindSDK'
