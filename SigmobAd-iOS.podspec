@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SigmobAd-iOS"
-  spec.version      = "4.15.9"
+  spec.version      = "4.16.0"
   spec.summary      = "SigmobAd-iOS is a SDK from Sigmob providing AD service."
   spec.description      = <<-DESC
   SigmobAd-iOS provides ADs which include native、splash、RewardVideo、Interstitial etc.
@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :http => 'https://sdkres.sigmob.cn/wind/ios/4.15.9_ab2109212e16da4f352f6beca395d607/wind_release_ios_4.15.9_20241231.zip' }
+  spec.source       = { :http => 'https://sdkres.sigmob.cn/wind/ios/4.16.0_74d3b67995ae652db2b5043225aaadc2/wind_release_ios_4.16.0_20241223.zip' }
   spec.xcconfig = { 'VALID_ARCHS' => 'arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
