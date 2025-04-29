@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :http => 'https://sdkres.sigmob.cn/wind/ios/4.18.2_3b9a7aa164d93493a9e8967916890bad/wind_release_ios_4.18.2_20250428.zip' }
+  spec.source       = { :http => 'https://sdkres.sigmob.cn/wind/ios/4.18.2_66b6325ba8970b518cbe6eb59585d54b/wind_release_ios_4.18.2_20250428.zip' }
   spec.xcconfig = { 'VALID_ARCHS' => 'arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
