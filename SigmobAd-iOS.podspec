@@ -20,11 +20,11 @@ Pod::Spec.new do |spec|
   spec.author       = { "Codi" => "codi.zhao@sigmob.com" }
   spec.platform     = :ios, "9.0"
   spec.ios.deployment_target = '9.0'
-  spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
+  spec.swift_versions = ['5.0']
+  spec.user_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC'], 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.source       = { :http => 'https://sdkres.sigmob.cn/wind/ios/5.0.1_85928fe34214e1d297623cd4d4cd42ef/wind_release_ios_5.0.1_20260617.zip' }
   spec.xcconfig = { 'VALID_ARCHS' => 'arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.requires_arc = true
   spec.default_subspec = 'WindSDK'
 
